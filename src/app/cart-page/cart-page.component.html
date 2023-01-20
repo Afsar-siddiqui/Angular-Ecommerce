@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <div *ngIf="showMessage" class="alert alert-success" role="alert">
+            
+          </div>
+        <div class="col-sm-8">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of cartList">
+                    <th><img src="{{ item.image }}" alt="" class="img-thumbnail" width="80px" height="80px"></th>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="cartDeleteProduct(item.id)">Remove</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">
+                  Summary
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Price: {{priceSummary.price}}</li>
+                  <li class="list-group-item">Discount: {{priceSummary.discount}}</li>
+                  <li class="list-group-item">Tax: {{priceSummary.tax}}</li>
+                  <li class="list-group-item">Delivery Charges: {{priceSummary.delivery}}</li>
+                  <li class="list-group-item">Total Price: {{priceSummary.total}}</li>
+                </ul>
+              </div>
+              <button class="btn btn-primary mt-2" (click)="checkout()">Check out</button>
+        </div>
+    </div>
+</div>

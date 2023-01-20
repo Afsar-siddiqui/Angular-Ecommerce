@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <div *ngIf="showMessage" class="alert alert-success" role="alert">
+            {{deleteMessage}}
+          </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of productList">
+                    <td scope="row">{{ item.id }}</td>
+                    <th><img src="{{ item.image }}" alt="" class="img-thumbnail" width="80px" height="80px"></th>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.color }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>
+                        <a class="btn btn-primary ml-2" routerLink="/seller-update-product/{{item.id}}">Edit</a>
+                        <button class="btn btn-danger" (click)="sellerDeleteProduct(item.id)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

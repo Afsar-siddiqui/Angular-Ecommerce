@@ -1,0 +1,39 @@
+<div class="container">
+    <!--Login-->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="mt-4 mb-4 text-center">Update Product</h2>
+          <div *ngIf="showMessage" class="alert alert-success" role="alert">
+            {{updateProductMessage}}
+          </div>
+            <form #updateProduct="ngForm" (ngSubmit)="sellerUpdateProduct(updateProduct.value)" class="login-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Product Name</label>
+                  <input type="text" class="form-control" name="name" ngModel="{{productData?.name}}">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" name="price" ngModel="{{productData?.price}}">
+                </div>
+                <div class="mb-3">
+                    <label for="color" class="form-label">Color</label>
+                    <input type="text" class="form-control" name="color" ngModel="{{productData?.color}}">
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" name="category" ngModel="{{productData?.category}}">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Product Details</label>
+                    <textarea type="text" class="form-control" name="description" ngModel="{{productData?.description}}"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Product Image</label>
+                    <input type="text" class="form-control" name="image" ngModel="{{productData?.image}}">
+                </div>
+                <button class="btn btn-primary ml-2">Update</button>
+                <button class="btn btn-secondary">Cancel</button>
+              </form>
+        </div>
+    </div>
+</div>

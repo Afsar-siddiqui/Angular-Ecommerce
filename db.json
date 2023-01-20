@@ -1,0 +1,110 @@
+{
+  "seller": [
+    {
+      "id": 1,
+      "name": "Afsar",
+      "email": "afsar.sdq@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "test@123",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "I Phone 14",
+      "price": "100000",
+      "color": "Black",
+      "category": "Apple",
+      "description": "I phone 14 product",
+      "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg",
+      "id": 2
+    },
+    {
+      "name": "I Phone 13",
+      "price": "100000",
+      "color": "Red",
+      "category": "Apple",
+      "description": "I phone product",
+      "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg",
+      "id": 3
+    },
+    {
+      "name": "I Phone 12",
+      "price": "100000",
+      "color": "Black",
+      "category": "Apple",
+      "description": "New ",
+      "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg",
+      "id": 4
+    },
+    {
+      "name": "I Phone 11",
+      "price": "100002",
+      "color": "Black",
+      "category": "Apple",
+      "description": "New Product",
+      "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "afsar",
+      "email": "afsar.sdq@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "name": "Afsar",
+      "email": "afsar.sdq@gmail.com",
+      "address": "129 c DTS Campus jajmau",
+      "contact": "8888",
+      "totalPrice": 190100,
+      "status": "process",
+      "id": 1
+    },
+    {
+      "name": "afsar siddiqui",
+      "email": "afsar.sdq@gmail.com",
+      "address": "129 c DTS Campus jajmau",
+      "contact": "2345",
+      "totalPrice": 190100,
+      "status": "cancelled",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "afsar siddiqui",
+      "email": "afsar.sdq@gmail.com",
+      "address": "129 c DTS Campus jajmau",
+      "contact": "999",
+      "totalPrice": 190100,
+      "status": "cancelled",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "name": "afsar siddiqui",
+      "email": "afsar.sdq@gmail.com",
+      "address": "129 c DTS Campus jajmau",
+      "contact": "123456789",
+      "totalPrice": 190100,
+      "status": "process",
+      "userId": 1,
+      "id": 4
+    }
+  ]
+}

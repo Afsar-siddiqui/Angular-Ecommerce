@@ -1,0 +1,34 @@
+.stock {
+    border: 1px solid #2ecc71;
+    border-radius: 50px;
+    padding: 0px 10px;
+    color: #2ecc71;
+    background: rgba(40, 199, 111, 0.1);
+}
+
+.product-count {
+    max-width: 50px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    text-align: center;
+}
+
+.product-count, button.product-plus, button.product-min{
+    padding: 8px;
+}
+
+button.product-min {
+    border-radius: 50px 0px 0px 50px;
+    -webkit-border-radius: 50px 0px 0px 50px;
+    -moz-border-radius: 50px 0px 0px 50px;
+    -ms-border-radius: 50px 0px 0px 50px;
+    -o-border-radius: 50px 0px 0px 50px;
+}
+
+button.product-plus {
+    border-radius: 0px 50px 50px 0px;
+    -webkit-border-radius: 0px 50px 50px 0px;
+    -moz-border-radius: 0px 50px 50px 0px;
+    -ms-border-radius: 0px 50px 50px 0px;
+    -o-border-radius: 0px 50px 50px 0px;
+}

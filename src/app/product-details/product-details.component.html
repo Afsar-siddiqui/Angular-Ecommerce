@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-sm-6">
+            <img src="{{productData?.image}}" alt="{{productData?.name}}" class="img-fluid">
+        </div>
+        <div class="col-sm-6">
+            <h3 class="">{{productData?.name}}</h3>
+            <div class="mb-3 border-bottom">
+                <p class="stock" style="width: 5rem">In Stock</p>
+            </div>
+            <p>Details: {{productData?.description}}</p>
+            <p class="">Price: {{ productData?.category }}</p>
+            <p class="">Price: {{ productData?.price }}</p>
+            <p class="">Color: {{ productData?.color }}</p>
+            <p class="pt-3 pb-3 mt-2 mb-2 border-top border-bottom">Total Price: <strong>{{ productData?.price }}</strong></p>
+            <button *ngIf="removeCart" class="btn btn-primary" (click)="removeToCart(productData?.id)">Remove to Cart</button>
+            <button *ngIf="!removeCart" class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+            <div class="quantity-group mt-3 mb-2">
+                <button class="product-min" (click)="handelQuantity('min')" >-</button>
+                <input class="product-count" type="text" value="{{productQuantity}}" />
+                <button class="product-plus" (click)="handelQuantity('plus')">+</button>
+    
+            </div>
+        </div>
+    </div>
+</div>

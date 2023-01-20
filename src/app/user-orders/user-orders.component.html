@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <div *ngIf="showMessage" class="alert alert-success" role="alert">
+            
+          </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let order of orderData">
+                    <td scope="row">#{{ order.id }}</td>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.email }}</td>
+                    <td>{{ order.address }}</td>
+                    <td>{{ order.contact }}</td>
+                    <td>{{ order.totalPrice }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="cancelOrder(order.id)">Cancel Order</button><!--(click)="sellerDeleteProduct(item.id)"-->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

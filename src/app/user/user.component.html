@@ -1,0 +1,53 @@
+<div class="container">
+    <!--Login-->
+    <div class="row justify-content-center" *ngIf="!showLogin">
+        <div class="col-md-6">
+          <h2 class="mt-4 mb-4 text-center">User Login</h2>
+          <div *ngIf="showMessage" class="alert alert-danger" role="alert">
+            {{LoginError}}
+          </div>
+            <form #loginUser="ngForm" (ngSubmit)="userLogin(loginUser.value)" class="login-form">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" name="email" ngModel>
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" ngModel>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button class="btn btn-primary">Login</button><br>
+                <a class="mt-3 mb-2 text-decoration-none" (click)="openSignUp()">Click for Sign Up</a>
+              </form>
+        </div>
+    </div>
+
+    <!--Signup-->
+    <div class="row justify-content-center" *ngIf="showLogin">
+        <div class="col-md-6">
+          <h2 class="mt-4 mb-4 text-center">User Sign Up</h2>
+            <form #signupUser="ngForm" (ngSubmit)="userSignUp(signupUser.value)" class="login-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" ngModel>
+                    <div id="emailHelp" class="form-text">Name</div>
+                </div>
+                <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" ngModel>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" ngModel>
+                </div>
+                <button class="btn btn-primary">Sign Up</button><br>
+                <a class="mt-3 mb-2 text-decoration-none" (click)="openLogin()">Already have account? Click for Login</a>
+            </form>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngSwitch]="menuType">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngSwitchCase="'default'">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/seller">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user" *ngIf="!showDashboard">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user-home" *ngIf="showDashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">Cart({{cartItems}})</a>
+          </li>
+        </ul>
+        <!--for seller-->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngSwitchCase="'seller'">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="seller-home">Product List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/seller-add-product">Add Product</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{sellerName | titlecase}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" (click)="logoutSeller()">Logout</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!--End for seller-->
+
+        <!--for User-->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngSwitchCase="'user'">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{userName | titlecase}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" (click)="logoutUser()">Logout</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">Cart({{cartItems}})</a>
+          </li>
+        </ul>
+        <!--end for user-->
+        <form class="d-flex">
+          <input class="form-control me-2" #searchValue type="search" (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" (click)="submitSearch(searchValue.value)">Search</button>
+          <div class="list-group" *ngIf="searchResult">
+            <a (mousedown)="redirectToDetails(search.id)" class="list-group-item list-group-item-action" *ngFor="let search of searchResult">{{ search.name }}</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
